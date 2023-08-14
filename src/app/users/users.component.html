@@ -1,0 +1,30 @@
+<div class="container fade-in-animation">
+    <div class="left-section">
+      <img src="assets/splashscreen.jpg" alt="Splash Screen">
+    </div>
+    <div class="right-section">
+      <h2 *ngIf="showRegistration">Create User</h2>
+      <h2 *ngIf="!showRegistration">Sign In</h2>
+  
+      <form *ngIf="showRegistration" (ngSubmit)="registerUser()">
+        <input type="text" [(ngModel)]="user.firstname" placeholder="First Name" name="firstname" required>
+        <input type="text" [(ngModel)]="user.lastname" placeholder="Last Name" name="lastname" required>
+        <input type="text" [(ngModel)]="user.phone" placeholder="Phone" name="phone" required>
+        <input type="text" [(ngModel)]="user.username" placeholder="Username" name="username" required>
+        <input type="password" [(ngModel)]="user.password" placeholder="Password" name="password" required>
+        <input type="email" [(ngModel)]="user.email" placeholder="Email" name="email" required>
+        <button class="button-inverse" type="submit">Create User</button>
+      </form>
+  
+      <form *ngIf="!showRegistration" (ngSubmit)="signInUser()">
+        <input type="text" [(ngModel)]="signInData.username" placeholder="Username or Email" name="username" required>
+        <input type="password" [(ngModel)]="signInData.password" placeholder="Password" name="password" required>
+        <button class="button-inverse" type="submit">Sign In</button>
+      </form>
+      <div id="choice">
+          <p>Don't have an account? <a href="#" (click)="showRegistration = true">Register</a></p>
+          <p>Already have an account? <a href="#" (click)="showRegistration = false">Sign In</a></p>
+      </div>
+    </div>
+  </div>
+  

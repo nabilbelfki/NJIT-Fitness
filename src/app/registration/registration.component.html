@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="registrations-list">
+    <h2>Registrations</h2>
+    <table>
+      <tr>
+        <th><input type="checkbox" (change)="toggleAllSelection()"></th>
+        <th>Member</th>
+        <th>Registration Date</th>
+        <th>Class</th>
+        <th>Instructor</th>
+        <th>Room Number</th>
+        <th>Room Building</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Duration</th>
+      </tr>
+      <tr *ngFor="let registration of registrations">
+        <td><input type="checkbox" [(ngModel)]="registration.selected" (change)="updateSelectedRegistrations()"></td>
+        <td>{{ registration.FirstName }} {{ registration.LastName }}</td>
+        <td>{{ registration.RegistrationDate }}</td>
+        <td>{{ registration.ClassName }}</td>
+        <td>{{ registration.InstructorFirstName }} {{ registration.InstructorLastName }}</td>
+        <td>{{ registration.RoomNumber }}</td>
+        <td>{{ registration.RoomBuilding }}</td>
+        <td>{{ registration.StartTime | date: 'MMMM d, y' }}</td>
+        <td>{{ registration.StartTime | date: 'h:mm a' }}</td>
+        <td>{{ registration.Duration }}</td>
+      </tr>
+    </table>
+    <div class="actions">
+      <button class="delete-button" [disabled]="!hasSelectedRegistrations" (click)="deleteRegistrations()">Delete</button>
+      <button class="add-button" (click)="showAddForm()">Add</button>
+    </div>
+    
+    <div class="add-form" *ngIf="showAddFormFlag">
+      <h2>Add Registration</h2>
+      <form>
+        <label for="member">Member:</label>
+        <select id="member" name="member" [(ngModel)]="selectedMember">
+          <option *ngFor="let member of members" [value]="member.ID">{{ member.FirstName }} {{ member.LastName }}</option>
+        </select>
+        <br>
+        <br>
+        <button type="button" (click)="addRegistration()">Add Registration</button>
+        <button type="button" (click)="cancelAddForm()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

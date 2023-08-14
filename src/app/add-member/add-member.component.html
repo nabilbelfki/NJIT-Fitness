@@ -1,0 +1,49 @@
+<!-- add-member.component.html -->
+<div class="add-member-overlay">
+    <div class="add-member-form">
+      <h3>Add Member</h3>
+      <form>
+        <div class="form-group">
+          <input type="text" placeholder="First Name" id="firstName" name="firstName" [(ngModel)]="firstName" class="form-control" required>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" placeholder="Last Name" id="lastName" name="lastName" [(ngModel)]="lastName" class="form-control" required>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" placeholder="Address" id="address" name="address" [(ngModel)]="address" class="form-control" required>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" placeholder="City" id="city" name="city" [(ngModel)]="city" class="form-control" required>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" placeholder="State" id="state" name="state" [(ngModel)]="state" class="form-control" required>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" placeholder="Zipcode" id="zipcode" name="zipcode" [(ngModel)]="zipcode" class="form-control" required>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" placeholder="Country" id="country" name="country" [(ngModel)]="country" class="form-control" required>
+        </div>
+  
+        <div class="form-group">
+            <select id="memberType" name="memberType" [(ngModel)]="memberType" class="form-control" required>
+            <!-- Update the property name to membership.Type -->
+            <option *ngFor="let membership of memberships" [value]="membership.Type">{{ membership.Type }}</option>
+            </select>
+        </div>
+          
+  
+        <div class="form-group">
+          <button type="button" class="btn btn-primary" (click)="onSubmit()">Add Member</button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

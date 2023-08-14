@@ -1,0 +1,34 @@
+<div class="calendar">
+  <div class="header">
+    <h1>Schedule Calendar</h1>
+  </div>
+  <div class="days">
+    <div class="day-header">Sun</div>
+    <div class="day-header">Mon</div>
+    <div class="day-header">Tue</div>
+    <div class="day-header">Wed</div>
+    <div class="day-header">Thu</div>
+    <div class="day-header">Fri</div>
+    <div class="day-header">Sat</div>
+    <!-- Render calendar days here -->
+    <!-- Use Angular's ngFor to loop through schedules and render events -->
+    <div class="day" *ngFor="let schedule of schedules" (click)="navigateToRegistration(schedule)">
+      <div class="event">
+        <p class="event-time">{{ schedule.Time }}</p>
+        <p class="event-title">{{ schedule.ClassName }}</p>
+        <p class="event-location">{{ schedule.Date | date: 'MMMM d, y' }}</p>
+      </div>
+    </div>
+    <!-- Plus icon grid for adding a new schedule -->
+    <div class="plus-icon-card" (click)="toggleForm()">
+      <span class="plus-icon">+</span>
+    </div>
+
+    <!-- Add schedule form -->
+    <div class="add-schedule-form" *ngIf="showForm">
+      <h5 class="card-title">Add a Schedule</h5>
+      <!-- Replace 'app-add-schedule' with the appropriate component for adding a schedule -->
+      <app-add-schedule (onCancel)="hideForm()" (scheduleSubmitted)="onScheduleSubmitted()"></app-add-schedule>
+    </div>
+  </div>    
+</div>

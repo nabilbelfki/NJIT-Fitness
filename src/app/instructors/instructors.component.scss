@@ -1,0 +1,111 @@
+/* instructors.component.scss */
+.instructors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .instructor-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.2s ease-in-out; /* Add a smooth transition on hover */
+  
+    &:hover {
+      transform: scale(1.05); /* Enlarge the card on hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .instructor-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .instructor-card p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Additional styling for plus icon grid */
+  .plus-icon-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px; /* Apply padding to match the member card */
+    height: 253px; /* Adjust the height to match the member card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Apply box shadow to match the member card */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out; /* Add a smooth transition on hover */
+  
+    &:hover {
+      transform: scale(1.05); /* Enlarge the card on hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .plus-icon-card .plus-icon {
+    font-size: 200px;
+    font-weight: 900;
+    color: #333;
+  }
+  
+  .trash-icon {
+    /* ... (existing styles) ... */
+    display: flex;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Add a smooth transition effect */
+  }
+  
+  .trash-icon svg {
+    width: 24px; /* Set the width to control the size */
+    height: 24px; /* Set the height to control the size */
+    max-width: 100%; /* Limit the maximum width to the container size */
+    max-height: 100%; /* Limit the maximum height to the container size */
+  }
+  
+  /* Add hover styles for the trash icon */
+  .trash-icon:hover {
+    background-color: darkgrey; /* Change the background color on hover */
+  }
+  
+  .instructor-card:hover .trash-icon {
+    display: flex; /* Display the trash icon when the instructor-card is hovered */
+  }
+  
+  /* Add the following styles to your existing CSS */
+  .instructor-image {
+    width: 80px; /* Set the width of the image container */
+    height: 80px; /* Set the height of the image container */
+    margin: 0 auto; /* Center the image container horizontally */
+    border-radius: 50%; /* Make the container circular */
+    overflow: hidden; /* Hide the parts of the image outside the circle */
+  }
+  
+  .instructor-image img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: cover; /* Ensure the image covers the entire container */
+  }
+  
+  /* Additional styling for circular image */
+  .circular-image {
+    border: 2px solid #fff; /* Add a white border to the circular image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Apply box shadow to the circular image */
+  }
+  

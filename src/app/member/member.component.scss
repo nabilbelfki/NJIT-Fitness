@@ -1,0 +1,210 @@
+/* Member card styling */
+.member-card {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the badge horizontally */
+    align-items: center; /* Center the children horizontally */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin: 0px auto;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    height: 90vh; /* Reduce the height to make space for the form */
+    overflow-y: auto; /* Enable vertical scrolling when content exceeds height */
+  
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .member-card img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .member-card h3 {
+    margin-top: 15px;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .member-card p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #444;
+    text-align: center;
+  }
+  
+  .edit-icon {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    cursor: pointer;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .edit-icon svg {
+    width: 80%;
+    height: 80%;
+    fill: black;
+  }
+  
+  .edit-icon:hover {
+    background-color: darkgrey;
+  }
+  
+  /* Additional styles for the form */
+  .form {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px; /* Add padding to create some space around the form */
+    box-sizing: border-box; /* Include padding in the total width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Add a background color to distinguish the form area from the card background */
+    background-color: #f1f1f1;
+  }
+  
+  /* Styles for each form group (label + input) */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for the label */
+  .form-group label {
+    color: #555555;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Styles for the input */
+  .form-group input {
+    width: 100%;
+    height: 40px;
+    font-size: 36px;
+    color: #1A2421;
+    max-width: 300px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Styles for the Save button */
+  .save-button {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Styles for the Close button */
+  .close-button {
+    background-color: grey;
+  }
+  
+  /* Styles for the form buttons */
+  .form-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Styles for the buttons */
+  .form-buttons button {
+    margin: 0 10px;
+    padding: 10px 10px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Skeleton loading effect */
+  .skeleton-loading {
+    background-color: #e0e0e0;
+    background-image: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200%;
+    animation: loading 1.5s infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: -100%;
+    }
+  }
+
+/* Badge for the member type */
+.member-type-badge {
+    display: flex; /* Use flex to center the badge both horizontally and vertically */
+    justify-content: center; /* Center the badge horizontally */
+    align-items: center; /* Center the badge vertically */
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 5px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    /* Set the width of the badge to the width of its content (text) */
+    inline-size: max-content;
+    margin: 0 auto; /* Center the badge horizontally within .member-card */
+}
+
+/* Styles for the 'regular' member type */
+.member-type-badge.student {
+    background-color: #007bff; /* Blue color for regular type */
+}
+
+/* Styles for the 'Family' member type */
+.member-type-badge.family {
+    background-color: #f44336; /* Red color for family type */
+}
+
+/* Styles for the 'Ordinary' member type */
+.member-type-badge.ordinary {
+    background-color: #9c27b0; /* Purple color for ordinary type */
+}
+
+/* Styles for the 'Senior' member type */
+.member-type-badge.senior {
+    background-color: #ff9800; /* Orange color for senior type */
+}
+
+/* Styles for the 'VIP' member type */
+.member-type-badge.vip {
+    background-color: #e91e63; /* Pink color for VIP type */
+}

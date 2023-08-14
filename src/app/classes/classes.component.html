@@ -1,0 +1,54 @@
+<div class="classes-grid">
+  <!-- Grid of existing classes -->
+  <div
+    class="class-card"
+    *ngFor="let item of classes"
+    (mouseenter)="showTrashIcon(item)"
+    (mouseleave)="hideTrashIcon()"
+  >
+    <!-- Update the routerLink to include the class ID -->
+    <div class="class-link" (click)="navigateToClass(item.ID)">
+      <img [src]="'assets/Classes/' + item.ID + '.jpg'" alt="Class Image" class="class-image" />
+      <h3>{{ item.Name }}</h3>
+      <div *ngIf="item.showTrash" class="trash-icon" (click)="deleteClass($event, item)">
+        <!-- Replace the anchor tag with a span element for the delete icon -->
+        <span class="delete-icon">
+          <svg
+            fill="#000000"
+            version="1.1"
+            id="Capa_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="800px"
+            height="800px"
+            viewBox="0 0 490.646 490.646"
+            xml:space="preserve"
+          >
+            <g>
+              <g>
+                <path
+                  d="M399.179,67.285l-74.794,0.033L324.356,0L166.214,0.066l0.029,67.318l-74.802,0.033l0.025,62.914h307.739L399.179,67.285z M198.28,32.11l94.03-0.041l0.017,35.262l-94.03,0.041L198.28,32.11z"
+                />
+                <path
+                  d="M91.465,490.646h307.739V146.359H91.465V490.646z M317.461,193.372h16.028v250.259h-16.028V193.372L317.461,193.372z M237.321,193.372h16.028v250.259h-16.028V193.372L237.321,193.372z M157.18,193.372h16.028v250.259H157.18V193.372z"
+                />
+              </g>
+            </g>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Plus icon grid -->
+  <div class="plus-icon-card" (click)="toggleForm()">
+    <span class="plus-icon">+</span>
+  </div>
+
+  <!-- Display the form to add new classes -->
+  <div class="add-class-form" *ngIf="showForm">
+    <h5 class="card-title">Add a Class</h5>
+    <!-- Use the output event without any data payload -->
+    <app-add-class (onCancel)="hideForm()" (classSubmitted)="onClassSubmitted()"></app-add-class>
+  </div>
+</div>

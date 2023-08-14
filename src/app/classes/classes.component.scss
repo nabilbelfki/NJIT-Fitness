@@ -1,0 +1,93 @@
+/* add-class.component.scss */
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .class-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.2s ease-in-out; /* Add a smooth transition on hover */
+  
+    &:hover {
+      transform: scale(1.05); /* Enlarge the card on hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  /* Add image styling */
+  img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Additional styling for plus icon grid */
+  .plus-icon-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px; /* Apply padding to match the room card */
+    height: 224px; /* Adjust the height to match the room card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Apply box shadow to match the room card */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out; /* Add a smooth transition on hover */
+  
+    &:hover {
+      transform: scale(1.05); /* Enlarge the card on hover */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .plus-icon {
+    font-size: 200px;
+    font-weight: 900;
+    color: #333;
+  }
+  
+  .trash-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Add a smooth transition effect */
+  }
+  
+  .trash-icon svg {
+    width: 24px; /* Set the width to control the size */
+    height: 24px; /* Set the height to control the size */
+    max-width: 100%; /* Limit the maximum width to the container size */
+    max-height: 100%; /* Limit the maximum height to the container size */
+  }
+  
+  /* Add hover styles for the trash icon */
+  .trash-icon:hover {
+    background-color: darkgrey; /* Change the background color on hover */
+  }
+  

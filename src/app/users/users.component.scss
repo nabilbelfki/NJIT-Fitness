@@ -1,0 +1,159 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .left-section {
+    flex-basis: 50%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .left-section img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .right-section {
+    flex-basis: 50%;
+    padding: 20px;
+    flex: 1;
+    position: relative;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+  }
+  
+  form {
+    position: relative;
+    display: grid;
+    gap: 10px;
+    text-align: center;
+    width: 90%;
+    z-index: 2;
+  }
+
+  #choice {
+    z-index: 2;
+  }
+  
+  label {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  @keyframes changeGradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 50%;
+    }
+    75% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .container.fade-in-animation {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .button-inverse {
+    transition: color 0.3s, background-color 0.3s;
+    background-color: var(--button-bg-color, white);
+  }
+  
+  .right-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: lavaLamp 20s infinite linear;
+    background: linear-gradient(to right, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+    background-size: 1400% 100%;
+    z-index: -1;
+  }
+  
+  .right-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: inherit;
+    mix-blend-mode: difference;
+  }
+  
+  @keyframes lavaLamp {
+    0% {
+      background-position: 0% 50%;
+    }
+    12.5% {
+      background-position: 100% 50%;
+    }
+    37.5% {
+      background-position: 50% 100%;
+    }
+    62.5% {
+      background-position: 0% 50%;
+    }
+    87.5% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .left-section,
+    .right-section {
+      flex-basis: 100%;
+      padding: 0;
+    }
+  
+    .left-section {
+      margin-bottom: 20px;
+    }
+  
+    .right-section {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 20px;
+    }
+  }
+  

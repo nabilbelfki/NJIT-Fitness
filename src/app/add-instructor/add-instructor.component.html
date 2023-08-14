@@ -1,0 +1,46 @@
+<!-- add-instructor.component.html -->
+<div class="add-instructor-overlay">
+    <div class="add-instructor-form">
+      <h3>Add Instructor</h3>
+      <form>
+        <div class="form-group">
+          <input type="text" placeholder="First Name" id="firstName" name="firstName" [(ngModel)]="firstName" class="form-control" required>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" placeholder="Last Name" id="lastName" name="lastName" [(ngModel)]="lastName" class="form-control" required>
+        </div>
+  
+        <div class="form-group">
+            <select id="instructorType" name="instructorType" class="form-control" [(ngModel)]="instructorType" required>
+              <option value="Internal" selected>Internal</option>
+              <option value="External">External</option>
+            </select>
+          </div>
+  
+          <!-- Internal Instructor: Show Salary Input -->
+          <div class="form-group" *ngIf="instructorType === 'Internal'">
+            <label for="salary">Salary:</label>
+            <input type="number" placeholder="Salary" id="salary" name="salary" [(ngModel)]="salary" class="form-control" required>
+          </div>
+          
+          <!-- External Instructor: Show Hours and Rate Inputs -->
+          <div *ngIf="instructorType === 'External'">
+            <div class="form-group">
+              <label for="hours">Hours:</label>
+              <input type="number" placeholder="Hours" id="hours" name="hours" [(ngModel)]="hours" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="rate">Rate:</label>
+              <input type="number" placeholder="Rate" id="rate" name="rate" [(ngModel)]="rate" class="form-control" required>
+            </div>
+          </div>
+  
+        <div class="form-group">
+          <button type="button" class="btn btn-primary" (click)="onSubmit()">Add Instructor</button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

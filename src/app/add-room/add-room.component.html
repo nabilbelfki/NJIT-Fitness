@@ -1,0 +1,21 @@
+<!-- add-room.component.html -->
+<div class="add-room-overlay">
+    <div class="add-room-form">
+      <h3>Add Room</h3>
+      <form>
+        <div class="form-group">
+          <input type="text" placeholder="Room" id="roomNumber" name="roomNumber" [(ngModel)]="roomNumber" class="form-control" required>
+        </div>
+  
+        <div class="form-group">
+          <input type="text" placeholder="Building" id="building" name="building" [(ngModel)]="building" class="form-control" required>
+        </div>
+  
+        <div class="form-group">
+          <button type="button" class="btn btn-primary" (click)="onSubmit()">Add Room</button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

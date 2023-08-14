@@ -1,0 +1,19 @@
+<div class="add-class-overlay">
+    <div class="add-class-form">
+      <h3>Add Class</h3>
+      <form>
+        <div class="form-group">
+          <input type="text" placeholder="Name" id="name" name="name" [(ngModel)]="name" class="form-control" required>
+        </div>
+  
+        <div class="form-group">
+          <textarea placeholder="Description" id="description" name="description" [(ngModel)]="description" class="form-control" required></textarea>
+        </div>
+  
+        <div class="form-group">
+          <button type="button" class="btn btn-primary" (click)="onSubmit()">Add Class</button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="add-schedule-form">
+    <h3>Add Schedule</h3>
+    <form>
+      <div class="form-group">
+        <label for="classID">Select Class:</label>
+        <select id="classID" name="classID" [(ngModel)]="classID" class="form-control" required>
+          <option *ngFor="let class of classes" [value]="class.ID">{{ class.Name }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="instructorID">Select Instructor:</label>
+        <select id="instructorID" name="instructorID" [(ngModel)]="instructorID" class="form-control" required>
+          <option *ngFor="let instructor of instructors" [value]="instructor.ID">{{ instructor.FirstName }} {{ instructor.LastName }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="roomID">Select Room:</label>
+        <select id="roomID" name="roomID" [(ngModel)]="roomID" class="form-control" required>
+          <option *ngFor="let room of rooms" [value]="room.ID">{{ room.Number }}</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="startTime">Start Time:</label>
+        <input type="datetime-local" id="startTime" name="startTime" [(ngModel)]="startTime" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="duration">Duration:</label>
+        <input type="text" placeholder="Duration" id="duration" name="duration" [(ngModel)]="duration" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <button type="button" class="btn btn-primary" (click)="onSubmit()">Add Schedule</button>
+        <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  
